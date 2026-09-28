@@ -1,0 +1,20 @@
+{
+  "name": "playvault-arcade",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server/index.js",
+    "seed": "node scripts/seed-games.mjs",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "uuid": "^11.1.0"
+  }
+}

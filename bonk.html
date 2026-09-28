@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonk.io Arcade - Play Free Online</title>
+  <link rel="icon" type="image/png" href="https://bonk.io/graphics/tt/favicon-32x32.png">
+  <link rel="stylesheet" href="bonk/bonk.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand-group">
+      <button id="bonkTopBtn" class="brand-btn" title="Click to play / reload Bonk.io right here inside the site">
+        <span class="brand-badge">⚡</span>
+        <span class="brand-name">BONK<span class="brand-dot">.</span>IO</span>
+        <span class="brand-tag">PLAY</span>
+      </button>
+      <div class="status-pill">
+        <span class="live-dot"></span>
+        <span class="status-text">Embedded &amp; Protected</span>
+      </div>
+    </div>
+    <div class="center-banner">
+      <span class="banner-icon">🛡️</span>
+      <span class="banner-text">Locked to Bonk.io — No shady redirects or spam sites</span>
+    </div>
+    <div class="action-group">
+      <button id="reloadBtn" class="action-btn" title="Reload Bonk.io in frame">
+        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Reload</span>
+      </button>
+      <button id="fullscreenBtn" class="action-btn primary-btn" title="Toggle Fullscreen">
+        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Fullscreen</span>
+      </button>
+      <button id="controlsBtn" class="action-btn" title="Game Controls &amp; Room Tips">
+        <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Guide</span>
+      </button>
+    </div>
+  </header>
+  <main class="game-stage" id="stageContainer">
+    <div class="iframe-wrapper" id="iframeWrapper">
+      <iframe id="bonkFrame" src="https://bonk.io" title="Bonk.io Game" allow="autoplay; fullscreen; gamepad; focus-without-user-activation; keyboard-map" sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-downloads allow-modals" tabindex="0"></iframe>
+      <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p class="loading-label">Loading Bonk.io inside website...</p>
+      </div>
+    </div>
+  </main>
+  <div id="guideModal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span class="modal-icon">🎮</span>
+          <h2>Bonk.io Controls &amp; Multiplayer Hub</h2>
+        </div>
+        <button id="closeGuideBtn" class="modal-close-btn" aria-label="Close Guide">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="guide-grid">
+          <div class="guide-card">
+            <h3>🕹️ Movement Controls</h3>
+            <ul class="control-list">
+              <li><kbd>Arrow Keys</kbd> or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> — Move around the arena</li>
+              <li><kbd>X</kbd> (Hold) — <strong>Heavy Mode</strong> (Anchor down, bump opponents off!)</li>
+              <li><kbd>Z</kbd> — <strong>Special Ability</strong> (in custom maps or modes)</li>
+              <li><kbd>Enter</kbd> — In-game chat with your friends</li>
+            </ul>
+          </div>
+          <div class="guide-card">
+            <h3>👥 Play With Your Friends</h3>
+            <ol class="step-list">
+              <li>Click <strong>"Custom Game"</strong> inside Bonk.io.</li>
+              <li>Click <strong>"Create Game"</strong> and choose a password if you want it private.</li>
+              <li>Give your friends the room name / password so they can join right from this site!</li>
+            </ol>
+          </div>
+        </div>
+        <div class="anti-redirect-box">
+          <h4>🔒 Anti-Redirect Protection Active</h4>
+          <p>This site runs Bonk.io in a secure sandbox that prevents ads or popups from redirecting you to malicious domains like <code>amongusfree.io</code>, <code>veckio.io</code>, or fake mirror sites. Clicking the <strong>BONK.IO</strong> button at the top will always keep you right here!</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="backToGameBtn" class="modal-action-btn">Back to Game</button>
+      </div>
+    </div>
+  </div>
+  <script src="bonk/bonk.js"></script>
+</body>
+</html>
